@@ -1,0 +1,10 @@
+{
+  "Author": "Det",
+  "Name": "Target Furniture",
+  "Description": "Adds a option that lets you select a housing item from the housing menu",
+  "InternalName": "SelectFurniture",
+  "DalamudApiLevel": 5,
+  "Tags": [
+    "housing"
+  ]
+}
