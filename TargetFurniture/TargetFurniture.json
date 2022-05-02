@@ -17,5 +17,5 @@
   "ApplicableVersion": "any",
   "DalamudApiLevel": 6,
   "LoadPriority": 0,
-  "Changelog": ""
+  "Changelog": "Added an alternative targeting option"
 }

@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<Authors>Det</Authors>
-		<Version>1.0.0.2</Version>
+		<Version>1.0.1.0</Version>
 		<Description>Adds a option that lets you select a housing item from the housing menu.</Description>
 		<PackageProjectUrl>https://github.com/InitialDet/TargetForniture</PackageProjectUrl>
 		<Configurations>Release</Configurations>

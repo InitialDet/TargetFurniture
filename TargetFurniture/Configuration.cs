@@ -10,5 +10,17 @@ namespace MoveFurniture {
         public void Save() {
             Service.PluginInterface!.SavePluginConfig(this);
         }
+
+        public bool UseAltTarget = false;
+
+        public static Configuration Load() {
+            if (Service.PluginInterface.GetPluginConfig() is Configuration config) {
+                return config;
+            }
+
+            config = new Configuration();
+            config.Save();
+            return config;
+        }
     }
 }
