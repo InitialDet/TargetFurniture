@@ -9,7 +9,7 @@ on:
     - main
 
 env:
-  PLUGIN_NAME: AutoHook
+  PLUGIN_NAME: TargetFurniture
   PERSONAL_PLUGIN_REPO: InitialDet/MyDalamudPlugins
 
 jobs:
