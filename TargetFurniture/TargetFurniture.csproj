@@ -33,6 +33,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Folder Include="images\" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="DalamudPackager" Version="2.1.7" />
 		<PackageReference Include="XivCommon" Version="4.0.0" />
 		<Reference Include="FFXIVClientStructs">

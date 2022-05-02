@@ -8,6 +8,10 @@
     "Casual",
     "Housing"
   ],
+  "IconUrl": "https://raw.githubusercontent.com/InitialDet/TargetFurniture/main/TargetFurniture/images/icon.png",
+  "ImageUrls": [
+    "https://raw.githubusercontent.com/InitialDet/TargetFurniture/main/TargetFurniture/images/image1.png"
+  ],
   "InternalName": "TargetFurniture",
   "AssemblyVersion": "",
   "ApplicableVersion": "any",
