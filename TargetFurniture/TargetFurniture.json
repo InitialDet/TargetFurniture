@@ -1,10 +1,17 @@
 {
   "Author": "Det",
   "Name": "Target Furniture",
-  "Description": "Adds a option that lets you select a housing item from the housing menu",
-  "InternalName": "SelectFurniture",
-  "DalamudApiLevel": 5,
-  "Tags": [
-    "housing"
-  ]
+  "Punchline": "Adds an option that let you Select/Move an housing item from the Housing Menu",
+  "Description": "Currently, the only possible way to select an housing item is to click it manually with your mouse over it, and that can be a problem if you have multiple items close to each other. \nThis plugins adds a new option when you right click an item from the housing menu saving you a lot of prouble.",
+  "RepoUrl": "https://github.com/InitialDet/TargetFurniture",
+  "CategoryTags": [
+    "Casual",
+    "Housing"
+  ],
+  "InternalName": "TargetFurniture",
+  "AssemblyVersion": "",
+  "ApplicableVersion": "any",
+  "DalamudApiLevel": 6,
+  "LoadPriority": 0,
+  "Changelog": ""
 }
