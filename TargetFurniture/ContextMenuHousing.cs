@@ -34,7 +34,8 @@ namespace MoveFurniture {
                 } else {
                     // To make the item follow the cursor you need to retarget it, for reasons idk you need a small delay before the second target for it to work
                     TargetItem();
-                    waiting.waitingRetarget(this);
+                    if (Service.Configuration.MoveToCursor)
+                        waiting.waitingRetarget(this);
                     PluginLog.Debug($"Finished");
                 }
             }
@@ -47,8 +48,8 @@ namespace MoveFurniture {
 
     public class AwaitingTarget {
         public async void waitingRetarget(ContextMenuHousing contextMenuHousing) {
-            await Task.Delay(10);
-            contextMenuHousing.TargetItem(); //
+            await Task.Delay(40);
+            contextMenuHousing.TargetItem(); 
         }
     }
 }

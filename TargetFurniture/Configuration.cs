@@ -13,6 +13,8 @@ namespace MoveFurniture {
 
         public bool UseAltTarget = false;
 
+        public bool MoveToCursor = true;
+
         public static Configuration Load() {
             if (Service.PluginInterface.GetPluginConfig() is Configuration config) {
                 return config;

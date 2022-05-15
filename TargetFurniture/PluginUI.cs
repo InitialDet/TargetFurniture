@@ -26,10 +26,14 @@ namespace TargetFurniture {
             if (!IsOpen)
                 return;
 
-            Utils.Draw.Checkbox("Enable Alternative Targeting Mode", ref Service.Configuration.UseAltTarget, "(Only for Layout Mode - Move)\nIf the default targeting mode doesn't work for you, this option might work. \n\nPS: After moving an item, you may see an Error Message at the top, you can ignore it.");
+            Utils.Draw.Checkbox("Move Furniture to Cursor", ref Service.Configuration.MoveToCursor, "- If Enabled, the item will follow the point of your cursor.\n- If Disabled, the item will stay in place and move relative to your cursor position." +
+                "\n\nIts recommended to have this enabled\n\nIt's the default behavior of the alternative mode.");
+
+
+            ImGui.Text("(Experimental) ");
+            Utils.Draw.Checkbox("Enable Alternative Targeting Mode", ref Service.Configuration.UseAltTarget, "(Only for Layout Mode - Move)\nIf the default targeting mode doesn't work for you, this option might work.\n\nThis is a experimental feature and might also not work for everybody\n\nPS: After moving an item, you may see an Error Message at the top, you can ignore it.");
 
             ImGui.Indent(28.0f * ImGuiHelpers.GlobalScale);
-
 
             ImGui.Indent(-25.0f * ImGuiHelpers.GlobalScale);
 

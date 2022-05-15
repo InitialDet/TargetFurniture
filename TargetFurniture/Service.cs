@@ -22,7 +22,6 @@ namespace MoveFurniture {
         [PluginService] public static SigScanner SigScanner { get; set; } = null!;
         [PluginService] public static CommandManager Commands { get; private set; } = null!;
 
-
         public static PluginMemory Memory { get; set; } = null!;
         public static Configuration Configuration { get; set; } = null!;
         public static XivCommonBase Common { get; set; } = null!;
