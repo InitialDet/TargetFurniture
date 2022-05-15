@@ -27,7 +27,7 @@ namespace TargetFurniture {
                 return;
 
             Utils.Draw.Checkbox("Move Furniture to Cursor", ref Service.Configuration.MoveToCursor, "- If Enabled, the item will follow the point of your cursor.\n- If Disabled, the item will stay in place and move relative to your cursor position." +
-                "\n\nIts recommended to have this enabled\n\nIt's the default behavior of the alternative mode.");
+                "\n\nIts recommended to have this enabled\n\nDoesn't affect the behavior of alternative mode.");
 
 
             ImGui.Text("(Experimental) ");

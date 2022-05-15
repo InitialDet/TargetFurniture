@@ -48,7 +48,7 @@ namespace MoveFurniture {
 
     public class AwaitingTarget {
         public async void waitingRetarget(ContextMenuHousing contextMenuHousing) {
-            await Task.Delay(40);
+            await Task.Delay(60);
             contextMenuHousing.TargetItem(); 
         }
     }

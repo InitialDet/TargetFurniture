@@ -17,5 +17,5 @@
   "ApplicableVersion": "any",
   "DalamudApiLevel": 6,
   "LoadPriority": 0,
-  "Changelog": "Added an alternative targeting option"
+  "Changelog": "Added a new option that makes the furniture follow the point of your cursor"
 }
