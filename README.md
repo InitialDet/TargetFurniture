@@ -3,4 +3,4 @@ Currently, the only possible way to select a housing item is to click it manuall
 ```
 https://raw.githubusercontent.com/InitialDet/MyDalamudPlugins/main/pluginmaster.json
 ```
-https://github.com/InitialDet/MyDalamudPlugins
+https://github.com/InitialDet/MyDalamudPlugins 
