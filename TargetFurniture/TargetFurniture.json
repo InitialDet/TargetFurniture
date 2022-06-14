@@ -8,13 +8,16 @@
     "https://raw.githubusercontent.com/InitialDet/TargetFurniture/main/TargetFurniture/images/image1.png"
   ],
   "RepoUrl": "https://github.com/InitialDet/TargetFurniture",
-  "CategoryTags": [
+  "Tags": [
     "Casual",
     "Housing"
+  ],
+  "CategoryTags": [
+    "utility"
   ],
   "InternalName": "TargetFurniture",
   "ApplicableVersion": "any",
   "DalamudApiLevel": 6,
   "LoadPriority": 0,
-  "Changelog": "Added a new option that makes the furniture follow the point of your cursor"
+  "Changelog": "Added new icon (Ty Vec7rex)"
 }
