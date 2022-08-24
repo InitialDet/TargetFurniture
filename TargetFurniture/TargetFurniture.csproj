@@ -2,19 +2,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<Authors>Det</Authors>
-		<Version>1.0.1.3</Version>
+		<Version>1.0.1.4</Version>
 		<Description>Adds a option that lets you select a housing item from the housing menu.</Description>
 		<PackageProjectUrl>https://github.com/InitialDet/TargetForniture</PackageProjectUrl>
-		<Configurations>Release</Configurations>
-		<TargetFramework>net5.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
 		<Platforms>x64</Platforms>
-		<Nullable>enable</Nullable>
+		<Configurations>Release</Configurations>
 		<LangVersion>latest</LangVersion>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
 		<OutputPath>bin\$(Configuration)\</OutputPath>
+		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -37,8 +41,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="DalamudPackager" Version="2.1.7" />
-		<PackageReference Include="XivCommon" Version="4.0.0" />
+		<PackageReference Include="Dalamud.ContextMenu" Version="1.2.1" />
+		<PackageReference Include="DalamudPackager" Version="2.1.8" />
 		<Reference Include="FFXIVClientStructs">
 			<HintPath>$(DalamudLibPath)FFXIVClientStructs.dll</HintPath>
 			<Private>false</Private>

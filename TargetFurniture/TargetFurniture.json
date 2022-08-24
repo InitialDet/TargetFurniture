@@ -17,7 +17,7 @@
   ],
   "InternalName": "TargetFurniture",
   "ApplicableVersion": "any",
-  "DalamudApiLevel": 6,
+  "DalamudApiLevel": 7,
   "LoadPriority": 0,
-  "Changelog": "Added new icon (Ty Vec7rex)"
+  "Changelog": "6.2 update"
 }

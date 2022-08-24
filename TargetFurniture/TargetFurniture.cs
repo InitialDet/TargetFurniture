@@ -1,62 +1,63 @@
 ﻿using Dalamud.Game.Command;
 using Dalamud.Plugin;
-using System.Threading.Tasks;
 using TargetFurniture;
-using XivCommon;
 
-namespace MoveFurniture {
-    public class TargetFurniture : IDalamudPlugin {
-        public string Name => "Target Furniture";
+namespace MoveFurniture;
+public class TargetFurniture : IDalamudPlugin
+{
+    public string Name => "Target Furniture";
 
-        private const string cmdConfig = "/tfconfig";
-        private const string cmdConfigShort = "/tfcfg";
+    private const string cmdConfig = "/tfconfig";
+    private const string cmdConfigShort = "/tfcfg";
 
-        public ContextMenuHousing PluginContextMenu;
+    public ContextMenuHousing PluginContextMenu;
 
-        private static PluginUI PluginUI = null!;
+    private static PluginUI PluginUI = null!;
 
-        public TargetFurniture(DalamudPluginInterface pluginInterface) {
-            
-            Service.Initialize(pluginInterface);
-            Service.Common = new XivCommonBase(Hooks.ContextMenu);
-            Service.Configuration = Configuration.Load();
-            Service.PluginInterface!.UiBuilder.Draw += Service.WindowSystem.Draw;
-            Service.PluginInterface!.UiBuilder.OpenConfigUi += OnOpenConfigUi;
+    public TargetFurniture(DalamudPluginInterface pluginInterface)
+    {
 
-            Service.Memory = new();
+        Service.Initialize(pluginInterface);
+        Service.Configuration = Configuration.Load();
+        Service.PluginInterface!.UiBuilder.Draw += Service.WindowSystem.Draw;
+        Service.PluginInterface!.UiBuilder.OpenConfigUi += OnOpenConfigUi;
 
-            PluginUI = new PluginUI();
+        Service.Memory = new();
 
-            PluginContextMenu = new();
-            PluginContextMenu.Toggle();
+        PluginUI = new PluginUI();
 
-            Service.Commands.AddHandler(cmdConfig, new CommandInfo(OnCommand) {
-                HelpMessage = "Open Config Window"
-            });
+        PluginContextMenu = new();
+        PluginContextMenu.Toggle();
 
-            Service.Commands.AddHandler(cmdConfigShort, new CommandInfo(OnCommand) {
-                HelpMessage = "Short Command for the Config Window "
-            });
-        }
+        Service.Commands.AddHandler(cmdConfig, new CommandInfo(OnCommand)
+        {
+            HelpMessage = "Open Config Window"
+        });
 
-        private void OnCommand(string command, string args) {
-            OnOpenConfigUi();
-        }
+        Service.Commands.AddHandler(cmdConfigShort, new CommandInfo(OnCommand)
+        {
+            HelpMessage = "Short Command for the Config Window "
+        });
+    }
 
-        private void OnOpenConfigUi() 
-            => PluginUI.Toggle();
+    private void OnCommand(string command, string args)
+    {
+        OnOpenConfigUi();
+    }
 
-        public void Dispose() {
-            Service.Configuration.Save();
+    private void OnOpenConfigUi()
+        => PluginUI.Toggle();
 
-            PluginContextMenu.Dispose();
-            PluginUI.Dispose();
+    public void Dispose()
+    {
+        Service.Configuration.Save();
 
-            Service.Common.Dispose();
-            Service.Commands.RemoveHandler(cmdConfig);
-            Service.Commands.RemoveHandler(cmdConfigShort);
-            Service.PluginInterface!.UiBuilder.Draw -= Service.WindowSystem.Draw;
-            Service.PluginInterface.UiBuilder.OpenConfigUi -= OnOpenConfigUi;
-        }
+        PluginContextMenu.Dispose();
+        PluginUI.Dispose();
+
+        Service.Commands.RemoveHandler(cmdConfig);
+        Service.Commands.RemoveHandler(cmdConfigShort);
+        Service.PluginInterface!.UiBuilder.Draw -= Service.WindowSystem.Draw;
+        Service.PluginInterface.UiBuilder.OpenConfigUi -= OnOpenConfigUi;
     }
 }
