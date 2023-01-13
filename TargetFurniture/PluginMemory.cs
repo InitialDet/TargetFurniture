@@ -22,7 +22,7 @@ public class PluginMemory
         try
         {
             // Pointers for housing structures.
-            layoutWorldPtr = Service.SigScanner.GetStaticAddressFromSig("48 8B 0D ?? ?? ?? ?? 48 85 C9 74 ?? 48 8B 49 40 E9 ?? ?? ?? ??", 2);
+            layoutWorldPtr = Service.SigScanner.GetStaticAddressFromSig("48 8B 0D ?? ?? ?? ?? 48 85 C9 74 ?? 48 8B 49 40 E9 ?? ?? ?? ??");
 
             // Read the pointers.
             layoutWorldPtr = Marshal.ReadIntPtr(layoutWorldPtr);

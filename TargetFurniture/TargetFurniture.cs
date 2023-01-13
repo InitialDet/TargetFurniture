@@ -7,7 +7,7 @@ public class TargetFurniture : IDalamudPlugin
 {
     public string Name => "Target Furniture";
 
-    private const string cmdConfig = "/tfconfig";
+    private const string cmdConfig = "/targetfurniture";
     private const string cmdConfigShort = "/tfcfg";
 
     public ContextMenuHousing PluginContextMenu;
