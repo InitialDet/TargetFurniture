@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<Authors>Det</Authors>
-		<Version>1.0.1.6</Version>
-		<Description>Adds a option that lets you select a housing item from the housing menu.</Description>
+		<Version>1.0.1.7</Version>
+		<Description>You can now select furnitures from the Housing Menu</Description>
 		<PackageProjectUrl>https://github.com/InitialDet/TargetForniture</PackageProjectUrl>
 	</PropertyGroup>
 
