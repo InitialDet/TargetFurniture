@@ -2,6 +2,7 @@
 using Dalamud.Plugin;
 
 namespace TargetFurniture;
+
 public class TargetFurniture : IDalamudPlugin
 {
     //public static string Name => "Target Furniture";
@@ -9,9 +10,9 @@ public class TargetFurniture : IDalamudPlugin
     private const string CmdConfig = "/targetfurniture";
     private const string CmdConfigShort = "/tfcfg";
 
-    private readonly ContextMenuHousing _pluginContextMenu;
-
     private static PluginUi _pluginUi = null!;
+
+    private readonly ContextMenuHousing _pluginContextMenu;
 
     public TargetFurniture(DalamudPluginInterface pluginInterface)
     {
@@ -38,14 +39,6 @@ public class TargetFurniture : IDalamudPlugin
         });
     }
 
-    private static void OnCommand(string command, string args)
-    {
-        OnOpenConfigUi();
-    }
-
-    private static void OnOpenConfigUi()
-        => _pluginUi.Toggle();
-
     public void Dispose()
     {
         Service.Configuration.Save();
@@ -57,5 +50,15 @@ public class TargetFurniture : IDalamudPlugin
         Service.Commands.RemoveHandler(CmdConfigShort);
         Service.PluginInterface.UiBuilder.Draw -= Service.WindowSystem.Draw;
         Service.PluginInterface.UiBuilder.OpenConfigUi -= OnOpenConfigUi;
+    }
+
+    private static void OnCommand(string command, string args)
+    {
+        OnOpenConfigUi();
+    }
+
+    private static void OnOpenConfigUi()
+    {
+        _pluginUi.Toggle();
     }
 }

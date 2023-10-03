@@ -6,14 +6,12 @@ namespace TargetFurniture;
 
 public class PluginMemory
 {
-    // Layout and housing module pointers.
-    private readonly IntPtr _layoutWorldPtr;
-    private unsafe LayoutWorld* Layout => (LayoutWorld*)_layoutWorldPtr;
-    public unsafe HousingStructure* HousingStructure => Layout->HousingStruct;
-
     // Function for selecting an item, usually used when clicking on one in game.
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void SelectItemDelegate(IntPtr housingStruct, IntPtr item);
+
+    // Layout and housing module pointers.
+    private readonly IntPtr _layoutWorldPtr;
     public readonly SelectItemDelegate SelectItem = null!;
 
     public PluginMemory()
@@ -21,21 +19,26 @@ public class PluginMemory
         try
         {
             // Pointers for housing structures.
-            _layoutWorldPtr = Service.SigScanner.GetStaticAddressFromSig("48 8B 0D ?? ?? ?? ?? 48 85 C9 74 ?? 48 8B 49 40 E9 ?? ?? ?? ??");
+            _layoutWorldPtr =
+                Service.SigScanner.GetStaticAddressFromSig(
+                    "48 8B 0D ?? ?? ?? ?? 48 85 C9 74 ?? 48 8B 49 40 E9 ?? ?? ?? ??");
 
             // Read the pointers.
             _layoutWorldPtr = Marshal.ReadIntPtr(_layoutWorldPtr);
 
             // Select housing item.
-            IntPtr selectItemAddress = Service.SigScanner.ScanText("E8 ?? ?? ?? ?? 48 8B CE E8 ?? ?? ?? ?? 48 8B 6C 24 40 48 8B CE");
+            var selectItemAddress =
+                Service.SigScanner.ScanText("E8 ?? ?? ?? ?? 48 8B CE E8 ?? ?? ?? ?? 48 8B 6C 24 40 48 8B CE");
             SelectItem = Marshal.GetDelegateForFunctionPointer<SelectItemDelegate>(selectItemAddress);
-
         }
         catch (Exception)
         {
             //PluginLog.LogError(ex, "Error while calling PluginMemory.ctor()");
         }
     }
+
+    private unsafe LayoutWorld* Layout => (LayoutWorld*)_layoutWorldPtr;
+    public unsafe HousingStructure* HousingStructure => Layout->HousingStruct;
 }
 
 public enum HousingLayoutMode
@@ -85,6 +88,7 @@ public unsafe struct HousingStructure
 public struct HousingItem
 {
     [FieldOffset(0x50)] public Vector3 Position;
+
     [FieldOffset(0x60)] public Quaternion Rotation;
     // [FieldOffset(0x90)] public HousingItemUnknown1* unknown;
 }

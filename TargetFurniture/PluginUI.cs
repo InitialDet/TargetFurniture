@@ -1,9 +1,10 @@
-﻿using Dalamud.Interface.Windowing;
-using ImGuiNET;
-using System;
+﻿using System;
 using System.Diagnostics;
+using Dalamud.Interface.Windowing;
+using ImGuiNET;
 
 namespace TargetFurniture;
+
 public class PluginUi : Window, IDisposable
 {
     public PluginUi() : base($"{Service.PluginName} Settings")
@@ -28,13 +29,15 @@ public class PluginUi : Window, IDisposable
 
         ShowKofi();
 
-        Utils.Draw.Checkbox("Move Furniture to Cursor", ref Service.Configuration.MoveToCursor, "- If Enabled, the item will follow the point of your cursor.\n- If Disabled, the item will stay in place and move relative to your cursor position." +
+        Utils.Draw.Checkbox("Move Furniture to Cursor", ref Service.Configuration.MoveToCursor,
+            "- If Enabled, the item will follow the point of your cursor.\n- If Disabled, the item will stay in place and move relative to your cursor position." +
             "\n\nIts recommended to have this enabled\n\nDoesn't affect the behavior of alternative mode.");
 
         ImGui.Spacing();
 
         ImGui.Text("(Experimental) ");
-        Utils.Draw.Checkbox("Enable Alternative Targeting Mode", ref Service.Configuration.UseAltTarget, "(Only for Layout Mode - Move)\nIf the default targeting mode doesn't work for you, this option might work.\n\nThis is a experimental feature and might also not work for everybody\n\nPS: After moving an item, you may see an Error Message at the top, you can ignore it.");
+        Utils.Draw.Checkbox("Enable Alternative Targeting Mode", ref Service.Configuration.UseAltTarget,
+            "(Only for Layout Mode - Move)\nIf the default targeting mode doesn't work for you, this option might work.\n\nThis is a experimental feature and might also not work for everybody\n\nPS: After moving an item, you may see an Error Message at the top, you can ignore it.");
 
         ImGui.End();
     }
@@ -47,9 +50,7 @@ public class PluginUi : Window, IDisposable
         ImGui.PushStyleColor(ImGuiCol.ButtonHovered, 0xAA000000 | 0x005E5BFF);
 
         if (ImGui.Button(buttonText))
-        {
             Process.Start(new ProcessStartInfo { FileName = "https://ko-fi.com/initialdet", UseShellExecute = true });
-        }
 
         ImGui.PopStyleColor(3);
     }
