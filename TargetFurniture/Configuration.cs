@@ -1,8 +1,7 @@
-﻿using Dalamud.Configuration;
-using Dalamud.Plugin;
-using System;
+﻿using System;
+using Dalamud.Configuration;
 
-namespace MoveFurniture;
+namespace TargetFurniture;
 [Serializable]
 public class Configuration : IPluginConfiguration
 {
@@ -10,7 +9,7 @@ public class Configuration : IPluginConfiguration
 
     public void Save()
     {
-        Service.PluginInterface!.SavePluginConfig(this);
+        Service.PluginInterface.SavePluginConfig(this);
     }
 
     public bool UseAltTarget = false;

@@ -17,7 +17,6 @@
   ],
   "InternalName": "TargetFurniture",
   "ApplicableVersion": "any",
-  "DalamudApiLevel": 8,
   "LoadPriority": 0,
-  "Changelog": "6.3 update"
+  "Changelog": "6.5 update"
 }

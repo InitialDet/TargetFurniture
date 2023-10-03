@@ -1,24 +1,23 @@
 ﻿using Dalamud.Game;
-using Dalamud.Game.Command;
 using Dalamud.Interface.Windowing;
 using Dalamud.IoC;
 using Dalamud.Plugin;
+using Dalamud.Plugin.Services;
 
-namespace MoveFurniture;
+namespace TargetFurniture;
 
-public class Service
+public class Service 
 {
-    public static void Initialize(DalamudPluginInterface pluginInterface)
-        => pluginInterface.Create<Service>();
+    public static void Initialize(DalamudPluginInterface pluginInterface) => pluginInterface.Create<Service>();
 
     public const string PluginName = "Target Furniture";
 
-    [PluginService] public static DalamudPluginInterface PluginInterface { get; set; } = null!;
-    [PluginService] public static SigScanner SigScanner { get; set; } = null!;
-    [PluginService] public static CommandManager Commands { get; private set; } = null!;
+    [PluginService] public static DalamudPluginInterface PluginInterface { get;  private set; } = null!;
+    [PluginService] public static ISigScanner SigScanner { get;  private set; } = null!;
+    [PluginService] public static ICommandManager Commands { get;  private set; } = null!;
 
     public static PluginMemory Memory { get; set; } = null!;
     public static Configuration Configuration { get; set; } = null!;
-    public static WindowSystem WindowSystem { get; } = new WindowSystem(PluginName);
+    public static WindowSystem WindowSystem { get; } = new(PluginName);
 }
 
