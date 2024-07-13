@@ -14,7 +14,7 @@ public class TargetFurniture : IDalamudPlugin
 
     private readonly ContextMenuHousing _pluginContextMenu;
 
-    public TargetFurniture(DalamudPluginInterface pluginInterface)
+    public TargetFurniture(IDalamudPluginInterface pluginInterface)
     {
         Service.Initialize(pluginInterface);
         Service.Configuration = Configuration.Load();

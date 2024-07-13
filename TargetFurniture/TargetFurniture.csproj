@@ -2,13 +2,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <Authors>Det</Authors>
-        <Version>1.0.1.8</Version>
+        <Version>1.0.2.0</Version>
         <Description>You can now select furnitures from the Housing Menu</Description>
         <PackageProjectUrl>https://github.com/InitialDet/TargetForniture</PackageProjectUrl>
     </PropertyGroup>
 
     <PropertyGroup>
-        <TargetFramework>net7.0-windows</TargetFramework>
+        <TargetFramework>net8.0-windows</TargetFramework>
         <Platforms>x64</Platforms>
         <Configurations>Release</Configurations>
         <LangVersion>latest</LangVersion>
@@ -41,8 +41,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Dalamud.ContextMenu" Version="1.3.1"/>
-        <PackageReference Include="DalamudPackager" Version="2.1.12"/>
+        <PackageReference Include="DalamudPackager" Version="2.1.13"/>
         <Reference Include="FFXIVClientStructs">
             <HintPath>$(DalamudLibPath)FFXIVClientStructs.dll</HintPath>
             <Private>false</Private>
