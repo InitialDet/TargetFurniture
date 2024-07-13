@@ -38,7 +38,6 @@ public unsafe class ContextMenuHousing : IDisposable
         if (Service.Memory.HousingStructure->Mode == HousingLayoutMode.Rotate &&
             Service.Memory.HousingStructure->State == ItemState.SoftSelect)
         {
-            Service.PluginLog.Debug("1");
             Service.Memory.SelectItem((IntPtr)Service.Memory.HousingStructure,
                 (IntPtr)Service.Memory.HousingStructure->ActiveItem);
         }
@@ -52,17 +51,11 @@ public unsafe class ContextMenuHousing : IDisposable
             }
             else
             {
-                Service.PluginLog.Debug("3");
                 // To make the item follow the cursor you need to retarget it, for reasons idk you need a small delay before the second target for it to work
                 TargetItem();
                 if (Service.Configuration.MoveToCursor)
                     AwaitingTarget.WaitingRetarget();
-                //PluginLog.Debug($"Finished");
             }
-        }
-        else
-        {
-            Service.PluginLog.Debug("None");
         }
     }
 
