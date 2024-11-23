@@ -38,8 +38,7 @@ public class PluginUi : Window, IDisposable
         ImGui.Text("(Experimental) ");
         Utils.Draw.Checkbox("Enable Alternative Targeting Mode", ref Service.Configuration.UseAltTarget,
             "(Only for Layout Mode - Move)\nIf the default targeting mode doesn't work for you, this option might work.\n\nThis is a experimental feature and might also not work for everybody\n\nPS: After moving an item, you may see an Error Message at the top, you can ignore it.");
-
-        ImGui.End();
+        
     }
 
     private static void ShowKofi()

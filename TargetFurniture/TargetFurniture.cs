@@ -20,6 +20,7 @@ public class TargetFurniture : IDalamudPlugin
         Service.Configuration = Configuration.Load();
         Service.PluginInterface.UiBuilder.Draw += Service.WindowSystem.Draw;
         Service.PluginInterface.UiBuilder.OpenConfigUi += OnOpenConfigUi;
+        Service.PluginInterface.UiBuilder.OpenMainUi += OnOpenConfigUi; 
 
         Service.Memory = new PluginMemory();
 
@@ -50,6 +51,7 @@ public class TargetFurniture : IDalamudPlugin
         Service.Commands.RemoveHandler(CmdConfigShort);
         Service.PluginInterface.UiBuilder.Draw -= Service.WindowSystem.Draw;
         Service.PluginInterface.UiBuilder.OpenConfigUi -= OnOpenConfigUi;
+        Service.PluginInterface.UiBuilder.OpenMainUi -= OnOpenConfigUi;
     }
 
     private static void OnCommand(string command, string args)
