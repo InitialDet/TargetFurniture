@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Dalamud.NET.Sdk/13.0.0">
     <PropertyGroup>
         <Authors>Det</Authors>
-        <Version>1.0.2.2</Version>
+        <Version>1.0.2.3</Version>
         <Description>You can now select furnitures from the Housing Menu</Description>
         <PackageProjectUrl>https://github.com/InitialDet/TargetForniture</PackageProjectUrl>
     </PropertyGroup>
 
     <PropertyGroup>
-        <TargetFramework>net9.0-windows</TargetFramework>
         <Platforms>x64</Platforms>
         <Configurations>Release</Configurations>
         <LangVersion>latest</LangVersion>
@@ -20,11 +19,7 @@
         <OutputPath>bin\$(Configuration)\</OutputPath>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-
-    <PropertyGroup>
-        <DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
-    </PropertyGroup>
-
+    
     <ItemGroup>
         <Content Include="TargetFurniture.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -39,36 +34,5 @@
     <ItemGroup>
         <Folder Include="images\"/>
     </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="DalamudPackager" Version="12.0.0" />
-        <Reference Include="FFXIVClientStructs">
-            <HintPath>$(DalamudLibPath)FFXIVClientStructs.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="Newtonsoft.Json">
-            <HintPath>$(DalamudLibPath)Newtonsoft.Json.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="Dalamud">
-            <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="ImGui.NET">
-            <HintPath>$(DalamudLibPath)ImGui.NET.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="ImGuiScene">
-            <HintPath>$(DalamudLibPath)ImGuiScene.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="Lumina">
-            <HintPath>$(DalamudLibPath)Lumina.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="Lumina.Excel">
-            <HintPath>$(DalamudLibPath)Lumina.Excel.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
-    </ItemGroup>
+    
 </Project>
